@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "snippetvault"
+version = "0.1.0"
+description = "Fast, zero-dependency terminal command & code snippet vault CLI with fuzzy search and tag indexing."
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Umut Güngör" }]
+requires-python = ">=3.10"
+dependencies = []
+keywords = ["cli", "snippets", "terminal", "developer-tools", "productivity", "command-vault"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://github.com/umutgungorr/snippetvault"
+Repository = "https://github.com/umutgungorr/snippetvault"
+Issues = "https://github.com/umutgungorr/snippetvault/issues"
+
+[project.scripts]
+snippetvault = "snippetvault.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/snippetvault"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
